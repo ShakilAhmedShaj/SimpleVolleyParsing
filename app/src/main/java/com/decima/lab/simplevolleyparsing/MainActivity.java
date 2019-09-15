@@ -54,6 +54,19 @@ public class MainActivity extends AppCompatActivity {
 
                 Log.d("JSON Array", "Data " + response);
 
+                for (int i = 0; i < response.length(); i++) {
+                    try {
+                        JSONObject jsonObject = response.getJSONObject(i);
+
+                        Log.d("JSON Array", jsonObject.getString("title"));
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+
+
             }
         }, new Response.ErrorListener() {
             @Override
